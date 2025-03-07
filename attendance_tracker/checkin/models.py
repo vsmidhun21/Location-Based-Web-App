@@ -11,3 +11,14 @@ class CheckInRecord(models.Model):
     
     # def __str__(self):
     #     return f"{self.employee.username} - {self.checkin_time}"
+
+class Employee(models.Model):
+    name = models.CharField(max_length=50)
+    department = models.CharField(max_length=50, null=True, blank=True)
+    designation = models.CharField(max_length=50, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    phone = models.IntegerField(max_length=15, null=True, blank=True)
+    address = models.TextField()
+
+    def __str__(self):
+        return self.name

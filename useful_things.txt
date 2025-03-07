@@ -1,2 +1,5 @@
 chat link:
 https://chatgpt.com/share/67caf8f5-9f2c-8007-bf4d-1672c8882055
+
+Code to trun on scipts in powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted
