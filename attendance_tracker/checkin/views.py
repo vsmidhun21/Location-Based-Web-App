@@ -6,18 +6,28 @@ from django.utils.timezone import now
 from .models import CheckInRecord
 from django.contrib.auth.models import User
 from geopy.distance import geodesic
-from django.shortcuts import render
-
-def home(request):
-    return render(request, 'index.html')
+from django.shortcuts import redirect, render
+from django.views.decorators.csrf import csrf_exempt
 
 # Set office coordinates (latitude, longitude)
-OFFICE_LOCATION = (11.0168445, 76.9558321)  # Example: Bangalore
+OFFICE_LOCATION = (11.0420173, 76.9758697)
+
+
+def employee_login(request):
+    if request.method == 'POST':
+        return redirect('employee_dashboard')
+    return render(request, 'Login/index.html')
+
+def employee_dashboard(request):
+    if request.method == 'POST':
+        return redirect('employee_dashboard')
+    return render(request, 'Dashboard/dashboard.html')
+
 
 @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated]) 
 def checkin(request):
-    user = request.user
+    # user = request.user
     latitude = float(request.data.get('latitude'))
     longitude = float(request.data.get('longitude'))
     user_location = (latitude, longitude)
@@ -35,6 +45,8 @@ def checkin(request):
         longitude=longitude
     )
     return Response({'message': 'Checked in successfully!', 'time': checkin_record.checkin_time})
+
+
 
 @api_view(['POST'])
 # @permission_classes([IsAuthenticated])

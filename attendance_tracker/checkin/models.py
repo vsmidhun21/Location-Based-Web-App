@@ -17,7 +17,7 @@ class Employee(models.Model):
     department = models.CharField(max_length=50, null=True, blank=True)
     designation = models.CharField(max_length=50, null=True, blank=True)
     email = models.EmailField(null=True, blank=True)
-    phone = models.IntegerField(max_length=15, null=True, blank=True)
+    phone = models.IntegerField(null=True, blank=True)
     address = models.TextField()
 
     def __str__(self):

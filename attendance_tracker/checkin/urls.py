@@ -2,7 +2,8 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', home, name='home'),  # Connect the UI
-    path('checkin/', checkin, name='checkin'),
+    path('', employee_login, name='employee_login'),
+    path('Dashboard', employee_dashboard, name='employee_dashboard'),
+    path('api/checkin/', checkin, name='checkin'),
     path('checkout/', checkout, name='checkout'),
 ]
