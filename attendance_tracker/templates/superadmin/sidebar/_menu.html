@@ -1,0 +1,29 @@
+<!--begin::sidebar menu-->
+<div class="app-sidebar-menu overflow-hidden flex-column-fluid">
+	<!--begin::Menu wrapper-->
+	<div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper hover-scroll-overlay-y my-2" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer" data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true">
+		<!--begin::Menu-->
+		<div class="menu menu-column menu-rounded menu-sub-indention px-1" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
+			<!--begin:Menu item-->
+	
+			<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start" class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention">
+			 
+				<a class="menu-link" href="{% url 'superadmin_dashboard' %}" id="sb_dashboards">
+					<span class="menu-icon"><i class="fa-solid fa-house-chimney fs-3"></i></span>
+					<span class="menu-title fw-bold">Dashboards</span>
+				</a> 
+			</div>
+	
+			<!--begin:Menu item-->
+			<!--begin:Menu item-->
+			
+			<div class="menu-item">
+				<!--begin:Menu link-->
+				<a class="menu-link" href="{% url 'department' %}">
+					<span class="menu-icon"><i class="fa-solid fa-users-viewfinder fs-2"></i></span>
+					<span class="menu-title">Department</span>
+				</a>
+				<!--end:Menu link-->
+			</div>
+		
+			<!--end:Menu item-->
